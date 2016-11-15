@@ -3,6 +3,8 @@ import {Route} from 'mobx-router';
 
 //components
 import Home from 'views/Home';
+import Thoughts from 'views/Thoughts';
+import Thought from 'views/Thought';
 
 const paths = {
   home: new Route({
@@ -10,12 +12,18 @@ const paths = {
     path: '/'
   }),
   thoughts: new Route({
-    component: <div> Thoughts </div>,
-    path: '/thoughts/:tag?'
+    component: <Thoughts/>,
+    path: '/thoughts/:tag?',
+    onEnter: (view, params, store) => {
+      store.thoughts.fetchThoughts();
+    }
   }),
   thought: new Route({
-    component: <div> Thought </div>,
-    path: '/thought/:slug'
+    component: <Thought/>,
+    path: '/thought/:slug',
+    onEnter: (view, params, store) => {
+      store.thoughts.getThought(params.slug)
+    }
   })
 };
 
