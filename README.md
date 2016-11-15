@@ -11,7 +11,7 @@ Generated with [create-react-app](https://github.com/facebookincubator/create-re
 * jQuery
 
 ### 🤔 But ... why?
-Why doesn't it consist of a three simple ```index.html```, ```app.css```, and ```main.js``` files?
+Why doesn't it consist of three simple ```index.html```, ```app.css```, and ```main.js``` files?
 
 Well, it did. But I wanted to experiment with [styled-components](https://github.com/styled-components/styled-components) for a while, and this was a good excuse for it.
 
