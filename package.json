@@ -6,12 +6,15 @@
     "custom-react-scripts": "0.0.17"
   },
   "dependencies": {
-    "animate.css": "^3.5.2",
-    "font-awesome": "^4.6.3",
-    "jquery": "^3.1.1",
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2",
-    "styled-components": "^1.0.10"
+    "animate.css": "3.5.2",
+    "font-awesome": "4.6.3",
+    "jquery": "3.1.1",
+    "mobx": "2.6.2",
+    "mobx-react": "3.5.9",
+    "mobx-router": "0.0.4",
+    "react": "15.3.2",
+    "react-dom": "15.3.2",
+    "styled-components": "1.0.10"
   },
   "scripts": {
     "start": "react-scripts start",

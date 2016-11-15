@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import {scrollToElement} from 'utils/dom-utils';
-import {getUrlParams} from 'utils/url-utils';
+import {observer} from 'mobx-react';
 
 //fonts
 import 'font-awesome/css/font-awesome.css';
@@ -38,30 +37,19 @@ import Concerts from 'sections/Concerts';
 import ConcertGoals from 'sections/ConcertGoals';
 import Fitness from 'sections/Fitness';
 
+@observer(['store'])
 class Home extends Component {
 
-  constructor() {
-    super();
-    const hiddenSections = [
-      'fitness', 'interesting', 'countries', 'concerts', 'concert-goals'
-    ];
-    const params = getUrlParams();
-    this.state = {
-      showExtra: hiddenSections.indexOf(params.section) !== -1,
-      params
-    }
-  }
-
   componentDidMount() {
-    const {section} = this.state.params;
-    if (section) {
-      scrollToElement(section);
-    }
+    const {store:{app}} = this.props;
+    app.scrollToUrlSection();
   }
 
   render() {
 
-    const {showExtra} = this.state;
+    const {store} = this.props;
+    const {app} = store;
+    const {showExtra} = app;
 
     return (
       <Wrapper>
@@ -90,7 +78,7 @@ class Home extends Component {
             <Projects/>
             <Achievements/>
 
-            {!showExtra && <ShowMoreButton onClick={() => this.setState({showExtra: true})}>
+            {!showExtra && <ShowMoreButton onClick={() => app.setShowExtra(true)}>
               I wanna know more!
             </ShowMoreButton>
             }
