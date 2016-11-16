@@ -20,7 +20,6 @@ Also, I have some plans for making it better and more interactive in the future,
 ### 🔮 Future plans
 🛠 🛠 🛠 More overengineering 🛠 🛠 🛠
 
-* Replacing setState() with MobX
 * Fetching data from an API
 * Server side rendering, etc. etc.
 * [More...](https://github.com/kitze/kitze.io/issues)
