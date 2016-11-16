@@ -11,10 +11,10 @@ const Header = ({store, styles = {}}) => {
   return (
     <Wrapper styles={styles.Wrapper}>
       <ContentMiddle styles={childStyles.ContentMiddle}>
-        <Link onClick={() => router.goTo(views.home, {}, store)}>
+        <Link isActive={router.currentView.id === 'home'} onClick={() => router.goTo(views.home, {}, store)}>
           portfolio
         </Link>
-        <Link onClick={() => router.goTo(views.thoughts, {}, store)}>
+        <Link isActive={router.currentView.id === 'thoughts'} onClick={() => router.goTo(views.thoughts, {}, store)}>
           thoughts
         </Link>
       </ContentMiddle>

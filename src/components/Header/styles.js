@@ -19,13 +19,21 @@ export const Link = styled.div`
   color: white;
   cursor: pointer;
   opacity: 0.8;
+  
+  ${props => props.isActive && `
+    opacity: 1;
+    font-weight: bold;
+  `}
+  
   &:hover{
     opacity: 1;
   }
+  
   &:after{
     content: '/';
     margin: 0 30px;
   }
+  
   &:last-child:after{
     display:none;
   }
