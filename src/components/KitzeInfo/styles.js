@@ -32,3 +32,7 @@ export const Description = styled.h4`
     font-weight: 100;
     font-size: 17px;
 `;
+
+export const ClickableTop = styled.div`
+  cursor: ${props => props.isClickable ? 'pointer': 'default'};
+`;
