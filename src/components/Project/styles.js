@@ -22,13 +22,13 @@ export const Title = styled.div`
     
     &:before{
       content: "";
-      width: 20px;
-      height: 20px;
+      width: 25px;
+      height: 25px;
       border-radius: 100%;
       color: white;
       background-color: #66dbff;
       position: absolute;
-      left: -87px;
+      left: -84px;
       top: 0px;
       border: 5px solid #333959;
       
@@ -50,15 +50,15 @@ export const Point = styled.p`
     
   &:before{
     content: "";
-    width: 8px;
-    height: 8px;
+    width: 15px;
+    height: 15px;
     border-radius: 100%;
     color: white;
     background-color: white;
     position: absolute;
-    left: -81px;
+    left: -79px;
     top: 4px;
-    border: 5px solid #333959;
+    border: 4px solid #333959;
     ${media.phoneM`
         left: -41px;
     `}

@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import {ThoughtPage} from 'styles/shared/styled-components';
 import {media} from 'utils/responsive-utils';
 
-export const Wrapper = styled(ThoughtPage)`
+export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`

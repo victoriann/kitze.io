@@ -7,7 +7,7 @@ import Helmet from 'react-helmet';
 import {getMeta} from 'utils/head-utils';
 
 //styled-components
-import {Wrapper, List, Link, Title, Tag, Tags, DateTime} from './styles';
+import {List, Link, Title, Tag, Tags, DateTime, RightSideThoughts} from './styles';
 
 const Thoughts = ({store}) => {
 
@@ -15,8 +15,7 @@ const Thoughts = ({store}) => {
   const {loading, filteredThoughts} = thoughts;
 
   return (
-    <Wrapper id="thoughts" backgroundColor="#ececec">
-
+    <RightSideThoughts backgroundColor="#ececec">
       <Helmet
         title="Thoughts"
         meta={getMeta({
@@ -25,40 +24,39 @@ const Thoughts = ({store}) => {
         }
       />
 
+
       {loading && <div> Loading ... </div>}
-      <div>
-        {!loading && <div>
 
-          <Tags>
-            {thoughts.allTags.map(tag => <Tag
-                key={tag}
-                selected={thoughts.selectedTags.indexOf(tag) !== -1}
-                onClick={() => thoughts.toggleTag(tag)}>
-                #{tag}
-              </Tag>
-            )}
-          </Tags>
+      {!loading && <div className="animated fadeInDown">
+        <Tags>
+          {thoughts.allTags.map(tag => <Tag
+              key={tag}
+              selected={thoughts.selectedTags.indexOf(tag) !== -1}
+              onClick={() => thoughts.toggleTag(tag)}>
+              #{tag}
+            </Tag>
+          )}
+        </Tags>
 
-          <List>
-            {filteredThoughts.map(thought => (
-              <Link
-                key={thought.id}
-                onClick={() => router.goTo(views.thought, {slug: thought.slug}, store)}
-              >
-                <Title>
-                  {thought.title}
-                </Title>
-                <DateTime>
-                  18.15.2016 - 16:11
-                </DateTime>
-              </Link>
-            ))
-            }
-          </List>
-        </div>
-        }
+        <List>
+          {filteredThoughts.map(thought => (
+            <Link
+              key={thought.id}
+              onClick={() => router.goTo(views.thought, {slug: thought.slug}, store)}
+            >
+              <Title>
+                {thought.title}
+              </Title>
+              <DateTime>
+                18.15.2016 - 16:11
+              </DateTime>
+            </Link>
+          ))
+          }
+        </List>
       </div>
-    </Wrapper>
+      }
+    </RightSideThoughts>
   )
 }
 

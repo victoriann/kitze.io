@@ -9,19 +9,8 @@ import {getMeta} from 'utils/head-utils';
 import 'font-awesome/css/font-awesome.css';
 import 'animate.css';
 
-//data
-import {socialIcons} from 'data/social';
-
-//images
-import me from  'img/me.jpg';
-
 //styled components
-import {Image, Title, Description, Wrapper, Sides, LeftSide, Contact, RightSide, ShowMoreButton} from './styles';
-import {UnorderedList} from 'styles/shared/styled-components';
-
-//components
-import MouseScroll from 'components/MouseScroll';
-import SocialIcon from 'components/SocialIcon';
+import {RightSideHome, ShowMoreButton} from './styles';
 
 //sections
 import WhoAmI from 'sections/WhoAmI';
@@ -56,58 +45,38 @@ class Home extends Component {
     const {showExtra} = app;
 
     return (
-      <Wrapper backgroundColor="#333959">
+      <RightSideHome backgroundColor="#333959">
 
         <Helmet
           title="Kitze"
           meta={getMeta()}
         />
 
-        <Sides>
+        <WhoAmI/>
+        <WhatImUpTo/>
+        <ProudProjects/>
+        <Speaking/>
+        <DevStack/>
+        <Technologies/>
+        <Libraries/>
+        <Projects/>
+        <Achievements/>
 
-          <LeftSide className="animated fadeIn">
-            <Image src={me} alt="me"/>
-            <Title> Hi, I'm Kitze! </Title>
-            <Description> I make stuff happen. </Description>
+        {!showExtra && <ShowMoreButton onClick={() => app.setShowExtra(true)}>
+          I wanna know more!
+        </ShowMoreButton>
+        }
 
-            <Contact>
-              <UnorderedList>
-                {socialIcons.map((icon, key) => <SocialIcon key={key} icon={icon}/>)}
-              </UnorderedList>
-            </Contact>
+        {showExtra && <div>
+          <Interesting/>
+          <Countries/>
+          <Concerts/>
+          <ConcertGoals/>
+          <Fitness/>
+        </div>
+        }
 
-            <MouseScroll/>
-          </LeftSide>
-
-          <RightSide>
-            <WhoAmI/>
-            <WhatImUpTo/>
-            <ProudProjects/>
-            <Speaking/>
-            <DevStack/>
-            <Technologies/>
-            <Libraries/>
-            <Projects/>
-            <Achievements/>
-
-            {!showExtra && <ShowMoreButton onClick={() => app.setShowExtra(true)}>
-              I wanna know more!
-            </ShowMoreButton>
-            }
-
-            {showExtra && <div>
-              <Interesting/>
-              <Countries/>
-              <Concerts/>
-              <ConcertGoals/>
-              <Fitness/>
-            </div>
-            }
-
-          </RightSide>
-
-        </Sides>
-      </Wrapper>
+      </RightSideHome>
     )
   }
 }

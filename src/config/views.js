@@ -8,10 +8,12 @@ import Thought from 'views/Thought';
 
 const paths = {
   home: new Route({
+    id: 'home',
     component: <Home/>,
     path: '/'
   }),
   thoughts: new Route({
+    id: 'thoughts',
     component: <Thoughts/>,
     path: '/thoughts/:tag?',
     onEnter: (view, params, store) => {
@@ -19,6 +21,7 @@ const paths = {
     }
   }),
   thought: new Route({
+    id: 'thought',
     component: <Thought/>,
     path: '/thought/:slug',
     onEnter: (view, params, store) => {

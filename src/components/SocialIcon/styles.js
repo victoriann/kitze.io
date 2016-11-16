@@ -22,6 +22,8 @@ export const Icon = styled.div`
       font-size: 20px;
       margin: 0 2px;
     `}
+    
+    ${props => props.styles}
 `;
 
 export const Link = styled.a`

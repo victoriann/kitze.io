@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import {ThoughtPage} from 'styles/shared/styled-components';
+import {RightSide} from 'styles/shared/styled-components';
 
-export const Wrapper = styled(ThoughtPage)`
+export const Wrapper = styled.div`
   
 `;
 
@@ -43,4 +43,8 @@ export const Tag = styled.button`
   margin-right: 5px;
   outline: 0;
   font-weight: ${props => props.selected ? '600' : '100'}
+`;
+
+export const RightSideThoughts = styled(RightSide)`
+  
 `;

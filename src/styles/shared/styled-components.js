@@ -13,9 +13,6 @@ export const UnderlinedLink = styled.a`
 
 export const Section = styled.section`
    margin-bottom: 100px;
-   &:first-of-type {
-      margin-top: 50px;
-   }
 `;
 
 export const SectionTitle = styled.h3`
@@ -29,13 +26,13 @@ export const SectionTitle = styled.h3`
 
   &:before {
       content: "";
-      width: 20px;
-      height: 20px;
+      width: 25px;
+      height: 25px;
       border-radius: 100%;
       color: white;
       background-color: white;
       position: absolute;
-      left: -87px;
+      left: -84px;
       top: 7px;
       border: 5px solid #333959;
       
@@ -45,7 +42,7 @@ export const SectionTitle = styled.h3`
   }
 
   &:first-of-type:before {
-      top: 0px;
+      top: -1px;
   }
   
   ${media.phoneM`
@@ -65,15 +62,8 @@ export const UnorderedList = styled.ul`
   padding: 0;
 `;
 
-export const Page = styled.div`
-  min-height: 100vh;
-  max-width: 800px;
-  margin: auto;
-  padding:40px;
-  
-  ${media.phablet`
-    padding: 15px;
-  `}
+export const RightSide = styled.div`
+  padding-bottom:50px;
   
   ${props => injectGlobal`
     body {
@@ -82,13 +72,9 @@ export const Page = styled.div`
   `}
 `;
 
-export const ThoughtPage = styled(Page)`
-  background-color: white;
-  border-left: 1px solid #cccccc;
-  border-right: 1px solid #cccccc;
-  
-  ${media.phablet`
-    padding: 15px;
-    border:0;
-  `}
+export const ContentMiddle = styled.div`
+  margin: auto;
+  max-width: 960px;
+  width: 100%;
+  ${props => props.styles}
 `;
