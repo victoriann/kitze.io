@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
 
+//meta tags
+import Helmet from 'react-helmet';
+import {getMeta} from 'utils/head-utils';
+
 //fonts
 import 'font-awesome/css/font-awesome.css';
 import 'animate.css';
@@ -53,6 +57,12 @@ class Home extends Component {
 
     return (
       <Wrapper>
+
+        <Helmet
+          title="Kitze"
+          meta={getMeta()}
+        />
+
         <Sides>
 
           <LeftSide className="animated fadeIn">

@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import {media} from 'utils/responsive-utils';
-import {Link} from 'mobx-router';
 
 export const UnderlinedLink = styled.a`
     color: white;
