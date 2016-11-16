@@ -7,7 +7,7 @@ import Helmet from 'react-helmet';
 import {getMeta} from 'utils/head-utils';
 
 //styled-components
-import {Wrapper, Content, Title, Top} from './styles';
+import {RightSideThought, Content, Title, Top} from './styles';
 import colors from 'config/colors';
 
 //external
@@ -19,7 +19,7 @@ const Thought = ({store}) => {
   const {loading, currentThought} = thoughts;
 
   return (
-    <Wrapper id="thought" backgroundColor={colors.gray}>
+    <RightSideThought backgroundColor={colors.gray}>
 
       <Helmet
         title={currentThought.title}
@@ -48,7 +48,7 @@ const Thought = ({store}) => {
       </div>
       }
 
-    </Wrapper>
+    </RightSideThought>
   )
 }
 
