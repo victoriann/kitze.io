@@ -1,11 +1,14 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import {observer} from 'mobx-react';
 import views from 'config/views';
+
+//meta
+import Helmet from 'react-helmet';
 import {getMeta} from 'utils/head-utils';
 
 //styled-components
-import {Wrapper} from './styles';
+import {Wrapper, Content, Title, Top} from './styles';
+import colors from 'config/colors';
 
 //external
 import {Link} from 'mobx-router';
@@ -15,29 +18,36 @@ const Thought = ({store}) => {
   const {thoughts} = store;
   const {loading, currentThought} = thoughts;
 
-  if (loading) {
-    return <div> Loading ... </div>
-  }
-
   return (
-    <Wrapper>
+    <Wrapper id="thought" backgroundColor={colors.gray}>
 
       <Helmet
         title={currentThought.title}
         meta={getMeta({
           title: currentThought.title,
-          description: 'Testing current thought meta!',
-          image: 'http://i.imgur.com/cVeFROj.jpg'
+          description: currentThought.description,
+          image: currentThought.coverImage
         })
         }
       />
 
-      <Link view={views.thoughts} store={store}>
-        <b> Read all thoughts</b>
-      </Link>
+      {loading && <div> Loading ... </div>}
+      {!loading && <div>
+        <Top>
+          <Title>{currentThought.title}</Title>
+          <Content dangerouslySetInnerHTML={{__html: currentThought.content}}/>
+        </Top>
 
-      <h1>{currentThought.title}</h1>
-      <div dangerouslySetInnerHTML={{__html: currentThought.content}}/>
+        <Link view={views.thoughts} store={store}>
+          Read all thoughts
+        </Link>
+        <br/>
+        <Link view={views.home} store={store}>
+          Go home
+        </Link>
+      </div>
+      }
+
     </Wrapper>
   )
 }

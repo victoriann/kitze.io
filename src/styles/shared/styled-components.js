@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import {media} from 'utils/responsive-utils';
+import {injectGlobal} from 'styled-components';
 
 export const UnderlinedLink = styled.a`
     color: white;
@@ -62,4 +63,32 @@ export const ListItem = styled.li`
 
 export const UnorderedList = styled.ul`
   padding: 0;
+`;
+
+export const Page = styled.div`
+  min-height: 100vh;
+  max-width: 800px;
+  margin: auto;
+  padding:40px;
+  
+  ${media.phablet`
+    padding: 15px;
+  `}
+  
+  ${props => injectGlobal`
+    body {
+      background-color: ${props.backgroundColor};
+    }
+  `}
+`;
+
+export const ThoughtPage = styled(Page)`
+  background-color: white;
+  border-left: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+  
+  ${media.phablet`
+    padding: 15px;
+    border:0;
+  `}
 `;

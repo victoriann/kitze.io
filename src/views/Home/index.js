@@ -56,7 +56,7 @@ class Home extends Component {
     const {showExtra} = app;
 
     return (
-      <Wrapper>
+      <Wrapper backgroundColor="#333959">
 
         <Helmet
           title="Kitze"
@@ -69,11 +69,13 @@ class Home extends Component {
             <Image src={me} alt="me"/>
             <Title> Hi, I'm Kitze! </Title>
             <Description> I make stuff happen. </Description>
+
             <Contact>
               <UnorderedList>
                 {socialIcons.map((icon, key) => <SocialIcon key={key} icon={icon}/>)}
               </UnorderedList>
             </Contact>
+
             <MouseScroll/>
           </LeftSide>
 

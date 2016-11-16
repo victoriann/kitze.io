@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 import {media} from 'utils/responsive-utils';
+import {Page} from 'styles/shared/styled-components';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled(Page)`
     padding: 20px;
     max-width: 960px;
     margin: auto;
-    
+    color: white;
+
     ${media.tablet`
       padding: 12px;
     `}
@@ -22,7 +24,7 @@ export const Sides = styled.div`
 
 export const LeftSide = styled.div`
     width: auto;
-    min-width: 250px;
+    min-width: 300px;
     padding-top: 50px;
     padding-right: 40px;
     display: flex;
@@ -46,7 +48,6 @@ export const LeftSide = styled.div`
 `;
 
 export const Contact = styled.div`
-  margin-bottom: 50px;
 `;
 
 export const RightSide = styled.div`

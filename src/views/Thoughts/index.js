@@ -2,34 +2,62 @@ import React from 'react';
 import {observer} from 'mobx-react';
 import views from 'config/views';
 
-//styled-components
-import {UnorderedList, ListItem} from 'styles/shared/styled-components';
-import {Wrapper} from './styles';
+//meta
+import Helmet from 'react-helmet';
+import {getMeta} from 'utils/head-utils';
 
-//external
-import {Link} from 'mobx-router';
+//styled-components
+import {Wrapper, List, Link, Title, Tag, Tags, DateTime} from './styles';
 
 const Thoughts = ({store}) => {
 
-  const {thoughts} = store;
-  const {loading, thoughtsList} = thoughts;
-
-  if (loading) {
-    return <div> Loading ... </div>
-  }
+  const {thoughts, router} = store;
+  const {loading, filteredThoughts} = thoughts;
 
   return (
-    <Wrapper>
-      <UnorderedList>
-        {thoughtsList.map(thought => (
-          <ListItem key={thought.id}>
-            <Link view={views.thought} params={{slug: thought.slug}} store={store}>
-              {thought.title}
-            </Link>
-          </ListItem>
-        ))
+    <Wrapper id="thoughts" backgroundColor="#ececec">
+
+      <Helmet
+        title="Thoughts"
+        meta={getMeta({
+          title: "Thoughts"
+        })
         }
-      </UnorderedList>
+      />
+
+      {loading && <div> Loading ... </div>}
+      <div>
+        {!loading && <div>
+
+          <Tags>
+            {thoughts.allTags.map(tag => <Tag
+                key={tag}
+                selected={thoughts.selectedTags.indexOf(tag) !== -1}
+                onClick={() => thoughts.toggleTag(tag)}>
+                #{tag}
+              </Tag>
+            )}
+          </Tags>
+
+          <List>
+            {filteredThoughts.map(thought => (
+              <Link
+                key={thought.id}
+                onClick={() => router.goTo(views.thought, {slug: thought.slug}, store)}
+              >
+                <Title>
+                  {thought.title}
+                </Title>
+                <DateTime>
+                  18.15.2016 - 16:11
+                </DateTime>
+              </Link>
+            ))
+            }
+          </List>
+        </div>
+        }
+      </div>
     </Wrapper>
   )
 }
