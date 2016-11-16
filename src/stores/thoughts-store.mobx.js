@@ -1,4 +1,4 @@
-import {observable, action, runInAction} from 'mobx';
+import {observable, action} from 'mobx';
 import server from 'config/server';
 
 //models
@@ -28,10 +28,8 @@ class ThoughtsStore {
   }
 
   @action fetchThought = slug => {
-    server.Thought.get(slug).then(result => {
-      const thought = new Thought(result.data.object);
-      this.setCurrentThought(thought);
-    })
+    this.loading = true;
+    server.Thought.get(slug).then(this.receiveThought);
   }
 
   @action fetchThoughts = () => {
@@ -40,13 +38,19 @@ class ThoughtsStore {
     }
 
     this.loading = true;
-    server.Thoughts.get().then(result => {
-      runInAction(() => {
-        this.loading = false;
-        this.fetchedAll = true;
-        this.setThoughts(result.data.objects);
-      });
-    })
+    server.Thoughts.get().then(this.receiveThoughts);
+  }
+
+  @action receiveThought = ({data}) => {
+    const thought = new Thought(data.object);
+    this.setCurrentThought(thought);
+    this.loading = false;
+  }
+
+  @action receiveThoughts = ({data}) => {
+    this.loading = false;
+    this.fetchedAll = true;
+    this.setThoughts(data.objects);
   }
 }
 
