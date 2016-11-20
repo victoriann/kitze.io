@@ -3,7 +3,6 @@ const links = {
   guitarYoutube: 'https://youtube.com/ampoverloaded',
   androidYoutube: 'https://youtube.com/techmuggles',
   soundcloud: 'https://soundcloud.com/thekitze',
-  instagram: 'https://instagram.com/thekitze',
   twitter: 'https://twitter.com/thekitze',
   linkedin: 'https://nl.linkedin.com/in/kitze',
   medium: 'https://medium.com/@kitze',
@@ -26,10 +25,6 @@ export const textLinks = [
   {
     href: links.soundcloud,
     title: 'Musician'
-  },
-  {
-    href: links.instagram,
-    title: 'Traveler'
   }
 ];
 
@@ -53,9 +48,5 @@ export const socialIcons = [
   {
     icon: 'medium',
     href: links.medium
-  },
-  {
-    icon: 'instagram',
-    href: links.instagram
   }
 ];
