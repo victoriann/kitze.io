@@ -11,7 +11,7 @@ const Header = ({store, styles = {}}) => {
     <Wrapper styles={styles.Wrapper}>
       <ContentMiddle styles={childStyles.ContentMiddle}>
         <Link isActive={router.currentView.id === 'home'} onClick={() => router.goTo(views.home, {}, store)}>
-          portfolio
+          about
         </Link>
         <Link isActive={router.currentView.id === 'thoughts'} onClick={() => router.goTo(views.thoughts, {}, store)}>
           thoughts

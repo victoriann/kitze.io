@@ -1,21 +1,24 @@
 import React from 'react';
 import {observer} from 'mobx-react';
-import views from 'config/views';
+import colors from 'config/colors';
 
 //meta
 import Helmet from 'react-helmet';
 import {getMeta} from 'utils/head-utils';
 
+//components
+import ThoughtItem from 'components/ThoughtItem';
+
 //styled-components
-import {List, Link, Title, Tag, Tags, DateTime, RightSideThoughts} from './styles';
+import {List, Tag, Tags, RightSideThoughts} from './styles';
 
 const Thoughts = ({store}) => {
 
-  const {thoughts, router} = store;
+  const {thoughts} = store;
   const {loading, filteredThoughts} = thoughts;
 
   return (
-    <RightSideThoughts backgroundColor="#ececec">
+    <RightSideThoughts backgroundColor={colors.thoughtsBackgroundColor}>
       <Helmet
         title="Thoughts"
         meta={getMeta({
@@ -24,10 +27,9 @@ const Thoughts = ({store}) => {
         }
       />
 
-
       {loading && <div> Loading ... </div>}
 
-      {!loading && <div className="animated fadeInDown">
+      {!loading && <div className="animated fadeIn">
         <Tags>
           {thoughts.allTags.map(tag => <Tag
               key={tag}
@@ -39,20 +41,7 @@ const Thoughts = ({store}) => {
         </Tags>
 
         <List>
-          {filteredThoughts.map(thought => (
-            <Link
-              key={thought.id}
-              onClick={() => router.goTo(views.thought, {slug: thought.slug}, store)}
-            >
-              <Title>
-                {thought.title}
-              </Title>
-              <DateTime>
-                18.15.2016 - 16:11
-              </DateTime>
-            </Link>
-          ))
-          }
+          {filteredThoughts.map(thought => <ThoughtItem key={thought.id} thought={thought}/>)}
         </List>
       </div>
       }

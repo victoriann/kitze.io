@@ -6,6 +6,7 @@ export const RightSideHome = styled(RightSide)`
     color: white;
     border-left: 4px solid rgba(255, 255, 255, 0.5);
     padding-left: 70px;
+    position:relative;
     
     ${media.phoneM`
       padding-left: 30px;

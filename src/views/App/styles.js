@@ -10,8 +10,11 @@ export const childStyles = {
       `
     },
     other: {
-      Wrapper: `
-        color: gray;
+      Title: `
+        color: #616161;
+      `,
+      Description: `
+        color: gray
       `,
       SocialIcon: {
         Icon: `

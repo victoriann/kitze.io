@@ -25,12 +25,14 @@ export const Title = styled.h1`
     font-size: 30px;
     font-weight: 300;
     margin: 50px 0 0px 0;
+    ${props => props.styles}
 `;
 
 export const Description = styled.h4`
     margin-top: 10px;
     font-weight: 100;
     font-size: 17px;
+    ${props => props.styles}
 `;
 
 export const ClickableTop = styled.div`

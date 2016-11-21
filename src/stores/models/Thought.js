@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import {formatDate} from 'utils/date-utils';
 
 class Thought {
 
@@ -20,8 +21,7 @@ class Thought {
   constructor(props) {
     const metafields = this.getMetaFields(props.metafields);
     this.content = props.content;
-    this.createdAt = props.created_at;
-    this.createdAt = props.cover_image;
+    this.createdAt = formatDate(new Date(props.created_at), 'MM.dd.YYYY HH:mm');
     this.slug = props.slug;
     this.status = props.status;
     this.title = props.title;

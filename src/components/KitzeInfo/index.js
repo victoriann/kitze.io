@@ -26,8 +26,8 @@ const KitzeInfo = ({store, styles = {}}) => {
         onClick={() => store.router.goTo(views.home, {}, store)}
       >
         <Image src={me} alt="me" styles={styles.Image}/>
-        <Title> Hi, I'm Kitze! </Title>
-        <Description> I make stuff happen. </Description>
+        <Title styles={styles.Title}> Hi, I'm Kitze! </Title>
+        <Description styles={styles.Description}> I make stuff happen. </Description>
       </ClickableTop>
 
       <Contact>
