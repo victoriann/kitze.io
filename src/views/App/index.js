@@ -22,9 +22,7 @@ const App = ({store}) => {
           <LeftSide className="animated fadeIn">
             <KitzeInfo styles={isHome ? childStyles.KitzeInfo.home : childStyles.KitzeInfo.other} childStyles/>
           </LeftSide>
-          <div>
-            {currentView && currentView.component}
-          </div>
+          {currentView && currentView.component}
         </Sides>
       </ContentMiddle>
     </Wrapper>

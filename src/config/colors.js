@@ -1,6 +1,7 @@
 const colors = {
   gray: '#ececec',
-  thoughtsBackgroundColor: 'white'
+  thoughtsBackgroundColor: 'white',
+  accent: '#333959'
 };
 
 export default colors;

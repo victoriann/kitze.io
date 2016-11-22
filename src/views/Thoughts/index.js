@@ -11,6 +11,7 @@ import ThoughtItem from 'components/ThoughtItem';
 
 //styled-components
 import {List, Tag, Tags, RightSideThoughts} from './styles';
+import Spinner from 'components/Spinner';
 
 const Thoughts = ({store}) => {
 
@@ -27,7 +28,14 @@ const Thoughts = ({store}) => {
         }
       />
 
-      {loading && <div> Loading ... </div>}
+      {loading && <Spinner
+        className="spinner"
+        speed="0.8"
+        size="4em"
+        backgroundColor={colors.accent}
+        color={colors.thoughtsBackgroundColor}
+      />
+      }
 
       {!loading && <div className="animated fadeIn">
         {false && <Tags>
