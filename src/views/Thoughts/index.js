@@ -30,7 +30,7 @@ const Thoughts = ({store}) => {
       {loading && <div> Loading ... </div>}
 
       {!loading && <div className="animated fadeIn">
-        <Tags>
+        {false && <Tags>
           {thoughts.allTags.map(tag => <Tag
               key={tag}
               selected={thoughts.selectedTags.indexOf(tag) !== -1}
@@ -38,10 +38,10 @@ const Thoughts = ({store}) => {
               #{tag}
             </Tag>
           )}
-        </Tags>
+        </Tags>}
 
         <List>
-          {filteredThoughts.map(thought => <ThoughtItem key={thought.id} thought={thought}/>)}
+          {filteredThoughts.map((thought, index) => <ThoughtItem index={index} key={thought.id} thought={thought}/>)}
         </List>
       </div>
       }

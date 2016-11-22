@@ -2764,13 +2764,6 @@ header-case@^1.0.0:
     no-case "^2.2.0"
     upper-case "^1.1.3"
 
-hedron:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/hedron/-/hedron-0.3.0.tgz#83ec7ee05c651e2ba1ab7901a29ee7ae8dfada69"
-  dependencies:
-    react "^15.3.2"
-    styled-components "^1.0.10"
-
 hoek@2.x.x:
   version "2.16.3"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-2.16.3.tgz#20bb7403d3cea398e91dc4710a8ff1b8274a25ed"
@@ -3972,14 +3965,15 @@ mobx-react@3.5.6:
   dependencies:
     hoist-non-react-statics "^1.2.0"
 
-mobx-router:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/mobx-router/-/mobx-router-0.0.4.tgz#7c74f8a9d711224c63e763be28f3a92c0ebb7e95"
+mobx-router@0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/mobx-router/-/mobx-router-0.0.6.tgz#2ef8edb7894abf31b0227373b2f913f23f96c6d9"
   dependencies:
     babel-runtime "^6.11.6"
     director "1.2.8"
     mobx "2.5.1"
     mobx-react "3.5.6"
+    query-string "^4.2.3"
     react "15.3.2"
 
 mobx@2.5.1:
@@ -4785,7 +4779,7 @@ qs@6.2.0:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.2.0.tgz#3b7848c03c2dece69a9522b0fae8c4126d745f3b"
 
-query-string@^4.1.0:
+query-string@^4.1.0, query-string@^4.2.3:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/query-string/-/query-string-4.2.3.tgz#9f27273d207a25a8ee4c7b8c74dcd45d556db822"
   dependencies:
@@ -4856,7 +4850,7 @@ react-side-effect@1.0.2:
   dependencies:
     fbjs "0.1.0-alpha.10"
 
-react@^15.3.2, react@15.3.2:
+react@15.3.2:
   version "15.3.2"
   resolved "https://registry.yarnpkg.com/react/-/react-15.3.2.tgz#a7bccd2fee8af126b0317e222c28d1d54528d09e"
   dependencies:
@@ -5464,16 +5458,6 @@ style-loader@0.13.1:
   resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.13.1.tgz#468280efbc0473023cd3a6cd56e33b5a1d7fc3a9"
   dependencies:
     loader-utils "^0.2.7"
-
-styled-components@^1.0.10:
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-1.0.11.tgz#05dec17ed913184fb6b52dc928ac30bca636cdfe"
-  dependencies:
-    buffer "^5.0.0"
-    fbjs "^0.8.4"
-    glamor "^2.15.5"
-    lodash "^4.15.0"
-    supports-color "^3.1.2"
 
 styled-components@1.0.10:
   version "1.0.10"

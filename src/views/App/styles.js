@@ -11,7 +11,7 @@ export const childStyles = {
     },
     other: {
       Title: `
-        color: #616161;
+        color: #848484;
       `,
       Description: `
         color: gray

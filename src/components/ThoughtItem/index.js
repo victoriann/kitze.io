@@ -1,24 +1,32 @@
 import React from 'react';
 import {observer} from 'mobx-react';
 import views from 'config/views';
-import {Link, Title, DateTime} from './styles';
+import {Link, ListItem, Title, DateTime, TagList, Tag} from './styles';
 
-const ThoughtItem = ({store, thought}) => {
-  const {router} = store;
-
+const ThoughtItem = ({store, thought, index}) => {
   return (
-    <Link
-      key={thought.id}
-      onClick={() => router.goTo(views.thought, {slug: thought.slug}, store)}
-    >
-      <Title>
-        {thought.title}
-      </Title>
+    <ListItem index={index}>
+      <Link
+        index={index}
+        key={thought.id}
+        view={views.thought}
+        params={{slug: thought.slug}}
+        store={store}
+      >
+        <Title>
+          {thought.title}
+        </Title>
 
-      <DateTime>
-        {thought.createdAt}
-      </DateTime>
-    </Link>
+        {thought.tags && <TagList>
+          {thought.tags.map(tag => <Tag key={tag}> {tag} </Tag>)}
+        </TagList>
+        }
+
+        <DateTime>
+          {thought.createdAt}
+        </DateTime>
+      </Link>
+    </ListItem>
   )
 }
 

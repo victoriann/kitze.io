@@ -15,7 +15,7 @@ const Thought = ({store}) => {
   const {loading, currentThought} = thoughts;
 
   return (
-    <RightSideThought backgroundColor={colors.gray}>
+    <RightSideThought backgroundColor={colors.thoughtsBackgroundColor}>
 
       <Helmet
         title={currentThought.title}

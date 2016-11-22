@@ -13,7 +13,7 @@
     "lodash": "4.17.2",
     "mobx": "2.6.2",
     "mobx-react": "3.5.9",
-    "mobx-router": "0.0.4",
+    "mobx-router": "0.0.6",
     "react": "15.3.2",
     "react-dom": "15.3.2",
     "react-helmet": "3.2.2",
