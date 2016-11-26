@@ -10,16 +10,16 @@ import {getMeta} from 'utils/head-utils';
 import ThoughtItem from 'components/ThoughtItem';
 
 //styled-components
-import {List, Tag, Tags, RightSideThoughts} from './styles';
+import {List, Tag, Tags, RightSide} from './styles';
 import Spinner from 'components/Spinner';
 
-const Thoughts = ({store}) => {
+const ThoughtsPage = ({store}) => {
 
   const {thoughts} = store;
   const {loading, filteredThoughts} = thoughts;
 
   return (
-    <RightSideThoughts backgroundColor={colors.thoughtsBackgroundColor}>
+    <RightSide backgroundColor={colors.thoughtsBackgroundColor}>
       <Helmet
         title="Thoughts"
         meta={getMeta({
@@ -53,8 +53,8 @@ const Thoughts = ({store}) => {
         </List>
       </div>
       }
-    </RightSideThoughts>
+    </RightSide>
   )
 }
 
-export default observer(['store'])(Thoughts);
+export default observer(['store'])(ThoughtsPage);

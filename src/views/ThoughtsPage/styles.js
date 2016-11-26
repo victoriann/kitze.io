@@ -1,14 +1,12 @@
 import styled from 'styled-components';
-import {RightSide} from 'styles/shared/styled-components';
+import {RightSideThoughts} from 'styles/shared/styled-components';
 
-export const Wrapper = styled.div`
-  
-`;
+export const Wrapper = styled.div``;
 
 export const List = styled.ul`
   padding: 0;
   margin: 0;
-  list-style-type:none;
+  list-style-type: none;
 `;
 
 export const Tags = styled.div`
@@ -21,6 +19,6 @@ export const Tag = styled.button`
   font-weight: ${props => props.selected ? '600' : '100'}
 `;
 
-export const RightSideThoughts = styled(RightSide)`
+export const RightSide = styled(RightSideThoughts)`
   
 `;

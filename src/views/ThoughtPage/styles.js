@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import {media} from 'utils/responsive-utils';
-import {RightSide} from 'styles/shared/styled-components';
+import {RightSideThoughts} from 'styles/shared/styled-components';
 
-export const RightSideThought = styled(RightSide)``;
+export const RightSide = styled(RightSideThoughts)``;
 
 export const Content = styled.div`
   color: #5f5f5f;
@@ -18,9 +18,11 @@ export const Title = styled.h1`
   color: #4d5686;
   margin-top: 0;
   font-size: 33px;
+  line-height: 40px;
   
   ${media.phablet`
-    font-size: 20px;
+    font-size: 25px;
+    line-height: 35px;
   `}
 `;
 

@@ -72,6 +72,10 @@ export const RightSide = styled.div`
   `}
 `;
 
+export const RightSideThoughts = styled(RightSide)`
+  padding: 0px 20px;
+`;
+
 export const ContentMiddle = styled.div`
   margin: auto;
   max-width: 960px;

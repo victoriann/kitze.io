@@ -3,8 +3,8 @@ import {Route} from 'mobx-router';
 
 //components
 import Home from 'views/Home';
-import Thoughts from 'views/Thoughts';
-import Thought from 'views/Thought';
+import ThoughtsPage from 'views/ThoughtsPage';
+import ThoughtPage from 'views/ThoughtPage';
 
 const paths = {
   home: new Route({
@@ -14,7 +14,7 @@ const paths = {
   }),
   thoughts: new Route({
     id: 'thoughts',
-    component: <Thoughts/>,
+    component: <ThoughtsPage/>,
     path: '/thoughts/:tag?',
     onEnter: (view, params, store) => {
       store.thoughts.fetchThoughts();
@@ -22,7 +22,7 @@ const paths = {
   }),
   thought: new Route({
     id: 'thought',
-    component: <Thought/>,
+    component: <ThoughtPage/>,
     path: '/thought/:slug',
     onEnter: (view, params, store) => {
       store.thoughts.getThought(params.slug)
