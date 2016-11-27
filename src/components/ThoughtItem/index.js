@@ -10,7 +10,7 @@ const ThoughtItem = ({store, thought, index}) => {
         index={index}
         key={thought.id}
         view={views.thought}
-        params={{slug: thought.slug}}
+        params={{slug: thought.id}}
         store={store}
       >
         <Title>

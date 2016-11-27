@@ -15,18 +15,12 @@ const paths = {
   thoughts: new Route({
     id: 'thoughts',
     component: <ThoughtsPage/>,
-    path: '/thoughts/:tag?',
-    onEnter: (view, params, store) => {
-      store.thoughts.fetchThoughts();
-    }
+    path: '/thoughts/:tag?'
   }),
   thought: new Route({
     id: 'thought',
     component: <ThoughtPage/>,
-    path: '/thought/:slug',
-    onEnter: (view, params, store) => {
-      store.thoughts.getThought(params.slug)
-    }
+    path: '/thought/:slug'
   })
 };
 

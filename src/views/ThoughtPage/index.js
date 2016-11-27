@@ -1,6 +1,10 @@
 import React from 'react';
-import {observer} from 'mobx-react';
+import {observer, inject} from 'mobx-react';
 import colors from 'config/colors';
+
+//data
+import {graphql} from 'react-apollo';
+import {ThoughtQuery, options} from './graphql-data';
 
 //meta
 import Helmet from 'react-helmet';
@@ -10,43 +14,47 @@ import {getMeta} from 'utils/head-utils';
 import {RightSide, Content, Title, Top} from './styles';
 import Spinner from 'components/Spinner';
 
-const ThoughtPage = ({store}) => {
+@inject('store')
+@observer
+@graphql(ThoughtQuery, {options})
+class ThoughtPage extends React.Component {
+  render() {
+    const {data} = this.props;
+    const {loading, getThought: currentThought} = data;
 
-  const {thoughts} = store;
-  const {loading, currentThought} = thoughts;
+    return (
+      <RightSide className="rst" backgroundColor={colors.thoughtsBackgroundColor}>
 
-  return (
-    <RightSide className="rst" backgroundColor={colors.thoughtsBackgroundColor}>
-
-      <Helmet
-        title={currentThought.title}
-        meta={getMeta({
-          title: currentThought.title,
-          description: currentThought.description,
-          image: currentThought.coverImage
-        })
+        {loading && <Spinner
+          className="spinner"
+          speed="0.8"
+          size="4em"
+          backgroundColor={colors.accent}
+          color={colors.thoughtsBackgroundColor}
+        />
         }
-      />
 
-      {loading && <Spinner
-        className="spinner"
-        speed="0.8"
-        size="4em"
-        backgroundColor={colors.accent}
-        color={colors.thoughtsBackgroundColor}
-      />
-      }
+        {!loading && currentThought && <div>
+          <Helmet
+            title={currentThought.title}
+            meta={getMeta({
+              title: currentThought.title,
+              description: currentThought.description,
+              image: currentThought.coverImage
+            })
+            }
+          />
+          <Top>
+            <Title>{currentThought.title}</Title>
+            <Content dangerouslySetInnerHTML={{__html: currentThought.content}}/>
+          </Top>
+        </div>
+        }
 
-      {!loading && <div>
-        <Top>
-          <Title>{currentThought.title}</Title>
-          <Content dangerouslySetInnerHTML={{__html: currentThought.content}}/>
-        </Top>
-      </div>
-      }
-
-    </RightSide>
-  )
+      </RightSide>
+    )
+  }
 }
+;
 
-export default observer(['store'])(ThoughtPage);
+export default ThoughtPage;

@@ -16,9 +16,20 @@ startRouter(views, store);
 //components
 import App from 'views/App';
 
+//apollo
+import ApolloClient, { createNetworkInterface } from 'apollo-client'
+import {ApolloProvider} from 'react-apollo';
+
+const client = new ApolloClient({
+  networkInterface: createNetworkInterface({uri: 'https://v2.api.scaphold.io/graphql/kitzeio'}),
+  dataIdFromObject: o => o.id
+});
+
 ReactDOM.render(
-  <Provider store={store}>
-    <App/>
-  </Provider>,
+  <ApolloProvider client={client}>
+    <Provider store={store}>
+      <App/>
+    </Provider>
+  </ApolloProvider>,
   document.getElementById('root')
 );

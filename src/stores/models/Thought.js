@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import {formatDate} from 'utils/date-utils';
 
 class Thought {
@@ -7,35 +6,25 @@ class Thought {
   content;
   createdAt;
   slug;
-  status;
   title;
-  coverImage;
   description;
-  tags;
-
-  getMetaFields = fields => _.reduce(fields, (object, {key, value}) => {
-    object[key] = value;
-    return object;
-  }, {});
+  coverImageUrl;
+  tags = [];
 
   constructor(props) {
-    const metafields = this.getMetaFields(props.metafields);
     this.content = props.content;
-    this.createdAt = formatDate(new Date(props.created_at), 'MM.dd.YYYY HH:mm');
+    this.createdAt = formatDate(new Date(props.createdAt), 'MM.dd.YYYY HH:mm');
     this.slug = props.slug;
-    this.status = props.status;
     this.title = props.title;
-    this.id = props._id;
+    this.id = props.id;
+    this.coverImageUrl = props.coverImageUrl;
 
-    //metafields
-    this.description = metafields.description;
-    this.tags = metafields.tags ?
-      metafields.tags
+    this.tags = props.tags ?
+      props.tags
         .split(',')
         .map(tag => tag.trim())
         .filter(tag => tag !== '')
       : null;
-    this.coverImage = metafields.cover_image;
   }
 
 
