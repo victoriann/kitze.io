@@ -26,10 +26,11 @@ export const Link = styled($Link)`
 `;
 
 export const DateTime = styled.div`
+  transition: color 100ms linear;
   font-size: 13px;
-  font-weight: 100;
+  font-weight: 300;
   margin-top: 5px;
-  color: gray;
+  color: #9c9c9c;
 `;
 
 export const Title = styled.h3`
