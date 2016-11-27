@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import {media} from 'utils/responsive-utils';
 import {RightSideThoughts} from 'styles/shared/styled-components';
+import colors from 'config/colors';
 
 export const RightSide = styled(RightSideThoughts)``;
 
@@ -11,6 +12,17 @@ export const Content = styled.div`
   line-height: 26px;
   font-size: 18px;
   font-weight: 300;
+  
+  a {
+    color: ${colors.accent};
+    text-decoration: none;
+    border-bottom: 1px dashed ${colors.accent};
+    padding-bottom: 2px;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
 `;
 
 export const Title = styled.h1`
