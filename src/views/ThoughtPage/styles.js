@@ -6,6 +6,7 @@ import colors from 'config/colors';
 export const RightSide = styled(RightSideThoughts)``;
 
 export const Content = styled.div`
+  font-family: 'Roboto', sans-serif !important;
   color: #5f5f5f;
   font-weight: 300;
   padding-bottom: 100px;
