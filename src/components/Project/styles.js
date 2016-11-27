@@ -28,12 +28,12 @@ export const Title = styled.div`
       color: white;
       background-color: #66dbff;
       position: absolute;
-      left: -84px;
+      left: -85px;
       top: 0px;
       border: 5px solid #333959;
       
       ${media.phoneM`
-        left: -47px;
+        left: -45px;
       `}
     }
     
@@ -56,11 +56,11 @@ export const Point = styled.p`
     color: white;
     background-color: white;
     position: absolute;
-    left: -79px;
+    left: -80px;
     top: 4px;
     border: 4px solid #333959;
     ${media.phoneM`
-        left: -41px;
+        left: -40px;
     `}
   }
 `;

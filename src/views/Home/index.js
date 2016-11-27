@@ -45,7 +45,7 @@ class Home extends Component {
     const {showExtra} = app;
 
     return (
-      <RightSideHome backgroundColor="#333959">
+      <RightSideHome id="right-side-home" backgroundColor="#333959">
 
         <Helmet
           title="Kitze"

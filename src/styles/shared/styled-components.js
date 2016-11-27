@@ -34,12 +34,12 @@ export const SectionTitle = styled.h3`
       color: white;
       background-color: white;
       position: absolute;
-      left: -84px;
+      left: -85px;
       top: 7px;
       border: 5px solid #333959;
       
       ${media.phoneM`
-        left: -47px;
+        left: -45px;
       `}
   }
 
