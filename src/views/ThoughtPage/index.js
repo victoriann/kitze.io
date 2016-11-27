@@ -2,6 +2,9 @@ import React from 'react';
 import {observer, inject} from 'mobx-react';
 import colors from 'config/colors';
 
+//models
+import Thought from 'stores/models/Thought';
+
 //data
 import {graphql} from 'react-apollo';
 import {ThoughtQuery, options} from './graphql-data';
@@ -20,7 +23,12 @@ import Spinner from 'components/Spinner';
 class ThoughtPage extends React.Component {
   render() {
     const {data} = this.props;
-    const {loading, getThought: currentThought} = data;
+    const {loading} = data;
+    let currentThought;
+
+    if (data.viewer) {
+      currentThought = new Thought(data.viewer.allThoughts.edges[0].node);
+    }
 
     return (
       <RightSide className="rst" backgroundColor={colors.thoughtsBackgroundColor}>
