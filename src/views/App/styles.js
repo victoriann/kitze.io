@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import {media} from 'utils/responsive-utils';
 import sizes from 'styles/sizes';
+import flex from 'styles/flex';
+import {wrapperPadding} from 'styles/shared/properties';
+import {mobileThoughts, mobileHome} from 'styles/scenarios';
 
 export const childStyles = {
   KitzeInfo: {
@@ -42,8 +45,11 @@ export const childStyles = {
 
 export const Wrapper = styled.div`
   position: relative;
-  top: ${sizes.header.height}px;
-  padding-top: 70px;
+  padding-top: ${sizes.header.height + 30}px;
+
+  ${mobileThoughts`
+    padding-top: ${sizes.header.height}px;
+  `}
 `;
 
 export const Sides = styled.div`
@@ -58,19 +64,26 @@ export const Sides = styled.div`
 export const LeftSide = styled.div`
     width: auto;
     min-width: 300px;
-    padding-right: 40px;
+    min-height: calc(100vh - ${sizes.header.height}px);
+    
     
     ${media.tablet`
         min-width: 0;
         width: 100%;
     `}
     
-    ${media.phoneM`
-        min-height: 100vh;
+    ${mobileHome`
+      ${flex.vertical};
+      ${flex.centerVertical};
+    `}
+    
+    ${mobileThoughts`
         padding-right: 0;
         padding-top: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        ${flex.centerVerticalReset}
+        ${flex.horizontal}
+        ${flex.centerHorizontalV}
+        ${wrapperPadding}
+        min-height: 0;
     `}
 `;

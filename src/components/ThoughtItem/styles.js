@@ -37,7 +37,7 @@ export const Title = styled.h3`
   margin: 0 0 8px 0;
   color: #57626b;
   font-weight: 300;
-  line-height: 18px;
+  line-height: 25px;
 `;
 
 export const TagList = styled.ul`

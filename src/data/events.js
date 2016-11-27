@@ -47,7 +47,7 @@ const events = [
     name: 'Frontend Coding NL',
     talk: talks.cssInJs,
     date: '17.11.16',
-    finished: false
+    finished: true
   }
 ];
 

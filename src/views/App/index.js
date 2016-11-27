@@ -15,11 +15,11 @@ const App = ({store}) => {
   const isHome = currentView.id === 'home';
 
   return (
-    <Wrapper id="router">
+    <Wrapper isHome={isHome}>
       <Header styles={isHome ? childStyles.Header.home : childStyles.Header.other}/>
       <ContentMiddle id="router">
         <Sides>
-          <LeftSide className="animated fadeIn">
+          <LeftSide id="left-side" isHome={isHome} className="animated fadeIn">
             <KitzeInfo styles={isHome ? childStyles.KitzeInfo.home : childStyles.KitzeInfo.other} childStyles/>
           </LeftSide>
           {currentView && currentView.component}

@@ -28,6 +28,10 @@ export const flex = {
     alignItems: center;
     justifyContent: center;
   `,
+  centerVerticalReset:`
+    alignItems: initial;
+    justifyContent: initial;
+  `,
   centerVerticalH: `
     alignItems: center;
   `,

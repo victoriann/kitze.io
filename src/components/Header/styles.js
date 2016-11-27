@@ -4,7 +4,6 @@ import sizes from 'styles/sizes';
 
 export const Wrapper = styled.div`
   transition: background-color 200ms linear;
-  margin-bottom: 50px;
   padding: 10px;
   height: ${sizes.header.height}px;
   position: fixed;

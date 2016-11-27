@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import {media} from 'utils/responsive-utils';
 import {ListItem} from 'styles/shared/styled-components';
+import {mobileThoughts} from 'styles/scenarios';
 
 export const Icon = styled.div`
     font-size: 22px;
@@ -33,4 +34,10 @@ export const Link = styled.a`
 export const Wrapper = styled(ListItem)`
     display: inline-block;
     margin: 0 10px;
+    
+    ${mobileThoughts`
+      &:first-child {
+        margin-left: 0;
+      }
+    `}
 `;

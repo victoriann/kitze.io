@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import {media} from 'utils/responsive-utils';
 import {injectGlobal} from 'styled-components';
+import {wrapperPadding} from 'styles/shared/properties';
+import flex from 'styles/flex';
 
 export const UnderlinedLink = styled.a`
     color: white;
@@ -73,7 +75,7 @@ export const RightSide = styled.div`
 `;
 
 export const RightSideThoughts = styled(RightSide)`
-  padding: 0px 20px;
+  ${wrapperPadding}
 `;
 
 export const ContentMiddle = styled.div`

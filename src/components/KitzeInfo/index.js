@@ -8,32 +8,38 @@ import {socialIcons} from 'data/social';
 //images
 import me from  'img/me.jpg';
 
-import {UnorderedList} from 'styles/shared/styled-components';
-
 //styled
-import {Image, Title, Description, Contact, Wrapper, ClickableTop} from './styles';
+import {Image, TitleAndDescription, Title, Description, Contact, Wrapper, ClickableTop, IconList} from './styles';
 
 //components
 import MouseScroll from 'components/MouseScroll';
 import SocialIcon from 'components/SocialIcon';
 
 const KitzeInfo = ({store, styles = {}}) => {
+
+  const {router} = store;
+  const isHome = router.currentView.id === 'home';
+
   return (
-    <Wrapper styles={styles.Wrapper}>
+    <Wrapper isHome={isHome} id="kitze-info" styles={styles.Wrapper}>
 
       <ClickableTop
+        isHome={isHome}
+        id="clickable-top"
         isClickable={store.router.currentView.id !== 'home'}
         onClick={() => store.router.goTo(views.home, {}, store)}
       >
-        <Image src={me} alt="me" styles={styles.Image}/>
-        <Title styles={styles.Title}> Hi, I'm Kitze! </Title>
-        <Description styles={styles.Description}> I make stuff happen. </Description>
+        <Image isHome={isHome} src={me} alt="me" styles={styles.Image}/>
+        <TitleAndDescription>
+          <Title isHome={isHome} styles={styles.Title}> Hi, I'm Kitze! </Title>
+          <Description isHome={isHome} styles={styles.Description}> I make stuff happen. </Description>
+        </TitleAndDescription>
       </ClickableTop>
 
       <Contact>
-        <UnorderedList>
-          {socialIcons.map((icon, key) => <SocialIcon styles={styles.SocialIcon} key={key} icon={icon}/>)}
-        </UnorderedList>
+        <IconList>
+          {socialIcons.map((icon, key) => <SocialIcon isHome={isHome} styles={styles.SocialIcon} key={key} icon={icon}/>)}
+        </IconList>
       </Contact>
 
       <MouseScroll/>
