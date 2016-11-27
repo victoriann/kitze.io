@@ -27,6 +27,7 @@
     "eject": "react-scripts eject",
     "deploy": "surge build/ http://kitze.io",
     "bns": "npm run build && cd ./build && http-server",
-    "bnd": "npm run build && npm run deploy"
+    "rename-index": "mv build/index.html build/200.html",
+    "bnd": "npm run build && npm run rename-index && npm run deploy"
   }
 }
