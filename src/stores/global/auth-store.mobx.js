@@ -3,14 +3,15 @@ import {CONSTANTS} from 'config/constants';
 import store from 'stores/store';
 import views from 'config/views';
 import _ from 'lodash';
+import GetLoginForm from 'stores/forms/login-form';
 
 class AuthStore {
 
-  @observable loading = false;
+  loginForm = GetLoginForm();
 
-  @action login = (signInUser, email, password) => {
+  @action login = (signInUser) => {
     this.loading = true;
-    signInUser({variables: {email, password}}).then(this.onLogin);
+    signInUser({variables: this.loginForm.toJSON()}).then(this.onLogin);
   }
 
   @action onLogin = ({data}) => {
