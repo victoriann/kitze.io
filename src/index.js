@@ -23,11 +23,10 @@ import {ApolloProvider} from 'react-apollo';
 const networkInterface = createNetworkInterface({uri: CONSTANTS.GRAPHQL_URL});
 networkInterface.use([{
   applyMiddleware (req, next) {
-    if (!req.options.headers) {
-      req.options.headers = {};
-    }
-    if (localStorage.getItem(CONSTANTS.TOKEN_KEY)) {
-      req.options.headers.authorization = `Bearer ${localStorage.getItem(CONSTANTS.TOKEN_KEY)}`;
+    const token = localStorage.getItem(CONSTANTS.TOKEN_KEY);
+    req.options.headers = {
+      ...req.options.headers,
+      ...token && {authorization: `Bearer ${token}`}
     }
     next();
   }

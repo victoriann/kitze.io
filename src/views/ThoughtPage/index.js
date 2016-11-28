@@ -63,6 +63,5 @@ class ThoughtPage extends React.Component {
     )
   }
 }
-;
 
 export default ThoughtPage;
