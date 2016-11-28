@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'index.css';
+import {CONSTANTS} from 'config/constants';
 
 //mobx
 import {useStrict} from 'mobx';
@@ -17,13 +18,21 @@ startRouter(views, store);
 import App from 'views/App';
 
 //apollo
-import ApolloClient, { createNetworkInterface } from 'apollo-client'
+import ApolloClient, {createNetworkInterface} from 'apollo-client'
 import {ApolloProvider} from 'react-apollo';
-
-const client = new ApolloClient({
-  networkInterface: createNetworkInterface({uri: 'https://v2.api.scaphold.io/graphql/kitzeio'}),
-  dataIdFromObject: o => o.id
-});
+const networkInterface = createNetworkInterface({uri: CONSTANTS.GRAPHQL_URL});
+networkInterface.use([{
+  applyMiddleware (req, next) {
+    if (!req.options.headers) {
+      req.options.headers = {};
+    }
+    if (localStorage.getItem(CONSTANTS.TOKEN_KEY)) {
+      req.options.headers.authorization = `Bearer ${localStorage.getItem(CONSTANTS.TOKEN_KEY)}`;
+    }
+    next();
+  }
+}])
+const client = new ApolloClient({networkInterface});
 
 ReactDOM.render(
   <ApolloProvider client={client}>

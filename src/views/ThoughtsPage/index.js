@@ -30,8 +30,8 @@ class ThoughtsPage extends React.Component {
     const loading = data.loading;
     let thoughts = [];
 
-    if (!loading) {
-      thoughts = data.viewer.allThoughts.edges.map(edge => new Thought(edge.node));
+    if (!loading && data && data.allThoughts) {
+      thoughts = data.allThoughts.map(thought => new Thought(thought));
     }
 
     return (

@@ -26,12 +26,12 @@ class ThoughtPage extends React.Component {
     const {loading} = data;
     let currentThought;
 
-    if (data.viewer) {
-      currentThought = new Thought(data.viewer.allThoughts.edges[0].node);
+    if (data.allThoughts) {
+      currentThought = new Thought(data.allThoughts[0]);
     }
 
     return (
-      <RightSide className="rst" backgroundColor={colors.thoughtsBackgroundColor}>
+      <RightSide backgroundColor={colors.thoughtsBackgroundColor}>
 
         {loading && <Spinner
           className="spinner"

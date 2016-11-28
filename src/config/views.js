@@ -5,6 +5,7 @@ import {Route} from 'mobx-router';
 import Home from 'views/Home';
 import ThoughtsPage from 'views/ThoughtsPage';
 import ThoughtPage from 'views/ThoughtPage';
+import LoginPage from 'views/LoginPage';
 
 const paths = {
   home: new Route({
@@ -16,6 +17,11 @@ const paths = {
     id: 'thoughts',
     component: <ThoughtsPage/>,
     path: '/thoughts/:tag?'
+  }),
+  login: new Route({
+    id: 'login',
+    component: <LoginPage/>,
+    path: '/login'
   }),
   thought: new Route({
     id: 'thought',
