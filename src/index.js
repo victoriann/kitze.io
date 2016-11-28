@@ -4,10 +4,8 @@ import 'index.css';
 import {CONSTANTS} from 'config/constants';
 
 //mobx
-import {useStrict} from 'mobx';
 import store from 'stores/store';
 import {Provider} from 'mobx-react';
-useStrict(true);
 
 //router
 import {startRouter} from 'mobx-router';
