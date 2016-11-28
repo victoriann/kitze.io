@@ -12,9 +12,9 @@ import {GetUser} from 'gql/graphql-shared';
 import {RightSide} from './styles';
 
 @inject('store')
-@observer
-@graphql(PostThoughtMutation, {name: 'postThought'})
+@graphql(PostThoughtMutation, {name: 'postThoughtMutation'})
 @graphql(GetUser)
+@observer
 class NewThoughtPage extends React.Component {
 
   state = {
@@ -30,21 +30,24 @@ class NewThoughtPage extends React.Component {
 
   render() {
 
-    const {postThought} = this.props;
-    const {title, content, tags, slug} = this.state;
+    const {postThoughtMutation, store} = this.props;
+    const {newThoughtPage} = store;
+    const {form} = newThoughtPage;
+    const {fields} = form;
+    const {title, content, tags, slug} = fields;
 
     return (
       <RightSide backgroundColor={colors.thoughtsBackgroundColor}>
         <div>
-          <input {...bindField(this, 'title')} type="text" placeholder="title"/>
+          <input {...bindField(title)} type="text" placeholder="title"/>
           <br/>
-          <input {...bindField(this, 'slug')} type="text" placeholder="slug"/>
+          <input {...bindField(slug)} type="text" placeholder="slug"/>
           <br/>
-          <textarea {...bindField(this, 'content')} placeholder="content"/>
+          <textarea {...bindField(content)} placeholder="content"/>
           <br/>
-          <input {...bindField(this, 'tags')} type="text" placeholder="tags"/>
+          <input {...bindField(tags)} type="text" placeholder="tags"/>
           <br/>
-          <button onClick={() => postThought({variables: {title, content, tags, slug}})}> Post</button>
+          <button onClick={() => newThoughtPage.postThought(postThoughtMutation)}> Post</button>
         </div>
       </RightSide>
     )
