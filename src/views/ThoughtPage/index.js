@@ -18,8 +18,8 @@ import {RightSide, Content, Title, Top} from './styles';
 import Spinner from 'components/Spinner';
 
 @inject('store')
-@observer
 @graphql(ThoughtQuery, {options})
+@observer
 class ThoughtPage extends React.Component {
   render() {
     const {data} = this.props;

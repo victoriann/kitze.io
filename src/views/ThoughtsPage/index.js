@@ -19,8 +19,8 @@ import {List, Tag, Tags, RightSide} from './styles';
 import Spinner from 'components/Spinner';
 
 @inject('store')
-@observer
 @graphql(ThoughtsQuery)
+@observer
 class ThoughtsPage extends React.Component {
 
   render() {
