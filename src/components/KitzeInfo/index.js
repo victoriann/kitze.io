@@ -18,8 +18,8 @@ import MouseScroll from 'components/MouseScroll';
 import SocialIcon from 'components/SocialIcon';
 
 @inject('store')
-@observer
 @graphql(GetUser)
+@observer
 class KitzeInfo extends Component {
 
   render() {
@@ -51,7 +51,13 @@ class KitzeInfo extends Component {
           </IconList>
         </Contact>
 
-        {isLoggedIn && <button onClick={auth.logout}> Logout</button>}
+        {isLoggedIn && <div>
+          <button onClick={auth.logout}> Logout</button>
+          <br/>
+          <button onClick={() => router.goTo(views.newThought, {}, store)}> New thought</button>
+          <br/>
+        </div>
+        }
 
         <MouseScroll/>
       </Wrapper>
