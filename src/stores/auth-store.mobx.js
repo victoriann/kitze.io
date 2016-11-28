@@ -2,6 +2,7 @@ import {action, observable} from 'mobx';
 import {CONSTANTS} from 'config/constants';
 import store from 'stores/store';
 import views from 'config/views';
+import _ from 'lodash';
 
 class AuthStore {
 
@@ -21,6 +22,18 @@ class AuthStore {
   @action logout = () => {
     window.localStorage.removeItem(CONSTANTS.TOKEN_KEY);
     location.reload();
+  }
+
+  @action returnUnloggedHome = (nextProps) => {
+    if (!nextProps.data.user.id) {
+      store.router.goTo(views.home, {}, store);
+    }
+  }
+
+  @action returnLoggedHome = (nextProps) => {
+    if (_.get(nextProps, 'data.user.id')) {
+      store.router.goTo(views.home, {}, store);
+    }
   }
 
 }

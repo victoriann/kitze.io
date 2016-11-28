@@ -5,6 +5,7 @@ import colors from 'config/colors';
 //data
 import {graphql} from 'react-apollo';
 import {SignInUserMutation} from './graphql-data';
+import {GetUser} from 'gql/graphql-shared';
 
 //styled-components
 import {RightSide} from './styles';
@@ -13,11 +14,16 @@ import Spinner from 'components/Spinner';
 @inject('store')
 @observer
 @graphql(SignInUserMutation, {name: 'signInUser'})
+@graphql(GetUser)
 class LoginPage extends React.Component {
 
   state = {
     email: '',
     password: ''
+  }
+
+  componentWillReceiveProps = nextProps => {
+    this.props.store.auth.returnLoggedHome(nextProps);
   }
 
   render() {
@@ -36,7 +42,6 @@ class LoginPage extends React.Component {
             <input onChange={e => this.setState({password: e.target.value})} type="password" value={password} placeholder="password"/>
             <br/>
             <button onClick={() => auth.login(signInUser, this.state.email, this.state.password)}> Login</button>
-            <button onClick={() => auth.logout()}> Logout</button>
           </div>
           }
         </div>
