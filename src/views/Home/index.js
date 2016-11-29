@@ -13,22 +13,22 @@ import 'animate.css';
 import {RightSideHome, ShowMoreButton} from './styles';
 
 //sections
-import WhoAmI from 'sections/WhoAmI';
-import WhatImUpTo from 'sections/WhatImUpTo';
-import ProudProjects from 'sections/ProudProjects';
-import Speaking from 'sections/Speaking';
-import DevStack from 'sections/DevStack';
-import Technologies from 'sections/Technologies';
-import Libraries from 'sections/Libraries';
-import Projects from 'sections/Projects';
-import Achievements from 'sections/Achievements';
+import WhoAmI from 'components/sections/WhoAmI';
+import WhatImUpTo from 'components/sections/WhatImUpTo';
+import ProudProjects from 'components/sections/ProudProjects';
+import Speaking from 'components/sections/Speaking';
+import DevStack from 'components/sections/DevStack';
+import Technologies from 'components/sections/Technologies';
+import Libraries from 'components/sections/Libraries';
+import Projects from 'components/sections/Projects';
+import Achievements from 'components/sections/Achievements';
 
 //extra sections
-import Interesting from 'sections/Interesting';
-import Countries from 'sections/Countries';
-import Concerts from 'sections/Concerts';
-import ConcertGoals from 'sections/ConcertGoals';
-import Fitness from 'sections/Fitness';
+import Interesting from 'components/sections/Interesting';
+import Countries from 'components/sections/Countries';
+import Concerts from 'components/sections/Concerts';
+import ConcertGoals from 'components/sections/ConcertGoals';
+import Fitness from 'components/sections/Fitness';
 
 @observer(['store'])
 class Home extends Component {
