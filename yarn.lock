@@ -2856,7 +2856,7 @@ hawk@~3.1.3:
     hoek "2.x.x"
     sntp "1.x.x"
 
-he@1.1.x:
+he@^1.1.0, he@1.1.x:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/he/-/he-1.1.0.tgz#29319d49beec13a9b1f3c4f9b2a6dde4859bb2a7"
 
@@ -3961,6 +3961,13 @@ map-obj@^1.0.0, map-obj@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/map-obj/-/map-obj-1.0.1.tgz#d933ceb9205d82bdcf4886f6742bdc2b4dea146d"
 
+markdown-to-react-components:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/markdown-to-react-components/-/markdown-to-react-components-0.2.1.tgz#3dee99f0cdbdb9764aae8bfabcf5d45815d7ed58"
+  dependencies:
+    he "^1.1.0"
+    marked "^0.3.3"
+
 marked-terminal@^1.6.2:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/marked-terminal/-/marked-terminal-1.7.0.tgz#c8c460881c772c7604b64367007ee5f77f125904"
@@ -3971,7 +3978,7 @@ marked-terminal@^1.6.2:
     lodash.assign "^4.2.0"
     node-emoji "^1.4.1"
 
-marked@^0.3.6:
+marked@^0.3.3, marked@^0.3.6:
   version "0.3.6"
   resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.6.tgz#b2c6c618fccece4ef86c4fc6cb8a7cbf5aeda8d7"
 
@@ -5006,11 +5013,25 @@ react-helmet:
     shallowequal "0.2.2"
     warning "3.0.0"
 
+react-in-markdown:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/react-in-markdown/-/react-in-markdown-0.0.2.tgz#053c669ec23f355aa83e5a3a3ab1e2eb098012d2"
+  dependencies:
+    react "^15.3.2"
+
 react-side-effect@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/react-side-effect/-/react-side-effect-1.0.2.tgz#98e354decdbf0281e4223d87852d33e345eda561"
   dependencies:
     fbjs "0.1.0-alpha.10"
+
+react@^15.3.2:
+  version "15.4.1"
+  resolved "https://registry.yarnpkg.com/react/-/react-15.4.1.tgz#498e918602677a3983cd0fd206dfe700389a0dd6"
+  dependencies:
+    fbjs "^0.8.4"
+    loose-envify "^1.1.0"
+    object-assign "^4.1.0"
 
 react@15.3.2:
   version "15.3.2"
