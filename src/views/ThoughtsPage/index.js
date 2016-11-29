@@ -4,7 +4,7 @@ import colors from 'config/colors';
 
 //data
 import {graphql} from 'react-apollo';
-import {ThoughtsQuery} from './graphql-data';
+import {ThoughtsQuery} from './data';
 
 //meta
 import Helmet from 'react-helmet';

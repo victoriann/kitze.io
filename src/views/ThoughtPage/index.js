@@ -7,7 +7,7 @@ import Thought from 'stores/models/Thought';
 
 //data
 import {graphql} from 'react-apollo';
-import {ThoughtQuery, options} from './graphql-data';
+import {ThoughtQuery, options} from './data';
 
 //meta
 import Helmet from 'react-helmet';
@@ -17,6 +17,12 @@ import {getMeta} from 'utils/head-utils';
 import {RightSide, Content, Title, Top} from './styles';
 import Spinner from 'components/Spinner';
 
+//markdown-to-react configuration
+import MTRC from 'markdown-to-react-components';
+import {renderCustomComponents} from 'react-in-markdown';
+import customComponents from 'config/custom-components';
+MTRC.configure({a: props => renderCustomComponents(props, customComponents)});
+
 @inject('store')
 @graphql(ThoughtQuery, {options})
 @observer
@@ -24,10 +30,10 @@ class ThoughtPage extends Component {
   render() {
     const {data} = this.props;
     const {loading} = data;
-    let currentThought;
+    let thought;
 
     if (data.allThoughts) {
-      currentThought = new Thought(data.allThoughts[0]);
+      thought = new Thought(data.allThoughts[0]);
     }
 
     return (
@@ -42,19 +48,21 @@ class ThoughtPage extends Component {
         />
         }
 
-        {!loading && currentThought && <div>
+        {!loading && thought && <div>
           <Helmet
-            title={currentThought.title}
+            title={thought.title}
             meta={getMeta({
-              title: currentThought.title,
-              description: currentThought.description,
-              image: currentThought.coverImage
+              title: thought.title,
+              description: thought.description,
+              image: thought.coverImage
             })
             }
           />
           <Top>
-            <Title>{currentThought.title}</Title>
-            <Content dangerouslySetInnerHTML={{__html: currentThought.content}}/>
+            <Title>{thought.title}</Title>
+            <Content>
+              {MTRC(thought.content).tree}
+            </Content>
           </Top>
         </div>
         }
