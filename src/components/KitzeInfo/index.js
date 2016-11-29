@@ -1,14 +1,12 @@
 import React, {Component} from 'react';
 import {inject, observer} from 'mobx-react';
 import views from 'config/views';
-import {graphql} from 'react-apollo';
 
 //data
 import {socialIcons} from 'data/social';
-import {GetUser} from 'gql/graphql-shared';
 
 //images
-import me from  'img/me.jpg';
+import me from 'img/me.jpg';
 
 //styled
 import {Image, TitleAndDescription, Title, Description, Contact, Wrapper, ClickableTop, IconList} from './styles';
@@ -18,15 +16,13 @@ import MouseScroll from 'components/MouseScroll';
 import SocialIcon from 'components/SocialIcon';
 
 @inject('store')
-@graphql(GetUser)
 @observer
 class KitzeInfo extends Component {
 
   render() {
-    const {store, data, styles = {}} = this.props;
-    const {router, auth} = store;
+    const {store, styles = {}} = this.props;
+    const {router} = store;
     const isHome = router.currentView.id === 'home';
-    const isLoggedIn = data && data.user && data.user.id;
 
     return (
       <Wrapper isHome={isHome} id="kitze-info" styles={styles.Wrapper}>
@@ -50,14 +46,6 @@ class KitzeInfo extends Component {
               <SocialIcon isHome={isHome} styles={styles.SocialIcon} key={key} icon={icon}/>)}
           </IconList>
         </Contact>
-
-        {isLoggedIn && <div>
-          <button onClick={auth.logout}> Logout</button>
-          <br/>
-          <button onClick={() => router.goTo(views.newThought, {}, store)}> New thought</button>
-          <br/>
-        </div>
-        }
 
         <MouseScroll/>
       </Wrapper>
