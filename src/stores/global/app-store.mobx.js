@@ -1,5 +1,4 @@
 import {observable, action} from 'mobx';
-import {getUrlParams} from 'utils/url-utils';
 import {scrollToSection} from 'utils/dom-utils';
 
 class App {
@@ -10,17 +9,16 @@ class App {
   ];
 
   //observables
-  @observable params = getUrlParams();
-  @observable showExtra = this.hiddenSections.indexOf(this.params.section) !== -1;
+  @observable showExtra = false;
 
   //actions
   @action setShowExtra = val => {
     this.showExtra = val;
   }
 
-  @action scrollToUrlSection = () => {
-    const {section} = this.params;
+  @action scrollToUrlSection = (section) => {
     if (section) {
+      this.showExtra = true;
       scrollToSection(section);
     }
   }

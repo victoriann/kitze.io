@@ -34,8 +34,8 @@ import Fitness from 'components/sections/Fitness';
 class Home extends Component {
 
   componentDidMount() {
-    const {store:{app}} = this.props;
-    app.scrollToUrlSection();
+    const {store:{app, router:{queryParams = {}}}} = this.props;
+    app.scrollToUrlSection(queryParams.section);
   }
 
   render() {
