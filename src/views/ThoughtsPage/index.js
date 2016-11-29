@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {inject, observer} from 'mobx-react';
 import colors from 'config/colors';
 
@@ -21,7 +21,7 @@ import Spinner from 'components/Spinner';
 @inject('store')
 @graphql(ThoughtsQuery)
 @observer
-class ThoughtsPage extends React.Component {
+class ThoughtsPage extends Component {
 
   render() {
 

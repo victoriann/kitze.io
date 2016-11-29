@@ -6,7 +6,7 @@ import {RouterStore} from 'mobx-router';
 
 const store = {
   app: new AppStore(),
-  auth: new AuthStore,
+  auth: new AuthStore(),
   thoughts: new ThoughtsStore(),
   newThoughtPage: new NewThoughtPageStore(),
   router: new RouterStore(),

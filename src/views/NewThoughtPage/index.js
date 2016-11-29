@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {observer, inject} from 'mobx-react';
 import colors from 'config/colors';
 import {bindField} from 'utils/input-utils';
@@ -15,7 +15,7 @@ import {RightSide} from './styles';
 @graphql(PostThoughtMutation, {name: 'postThoughtMutation'})
 @graphql(GetUser)
 @observer
-class NewThoughtPage extends React.Component {
+class NewThoughtPage extends Component {
 
   state = {
     title: '',

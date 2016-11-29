@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {observer, inject} from 'mobx-react';
 import colors from 'config/colors';
 import {bindField, onEnter, autofocus} from 'utils/input-utils';
@@ -16,7 +16,7 @@ import Spinner from 'components/Spinner';
 @graphql(SignInUserMutation, {name: 'signInUser'})
 @graphql(GetUser)
 @observer
-class LoginPage extends React.Component {
+class LoginPage extends Component {
 
   componentWillReceiveProps = nextProps => {
     this.props.store.auth.returnLoggedHome(nextProps);

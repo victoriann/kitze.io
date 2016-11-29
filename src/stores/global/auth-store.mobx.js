@@ -1,4 +1,4 @@
-import {action, observable} from 'mobx';
+import {action} from 'mobx';
 import {CONSTANTS} from 'config/constants';
 import store from 'stores/store';
 import views from 'config/views';
