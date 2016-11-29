@@ -1,6 +1,6 @@
 import {observable, action} from 'mobx';
 import {getUrlParams} from 'utils/url-utils';
-import {scrollToElement} from 'utils/dom-utils';
+import {scrollToSection} from 'utils/dom-utils';
 
 class App {
 
@@ -21,7 +21,7 @@ class App {
   @action scrollToUrlSection = () => {
     const {section} = this.params;
     if (section) {
-      scrollToElement(section);
+      scrollToSection(section);
     }
   }
 }
