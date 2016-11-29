@@ -3,12 +3,11 @@ import {formatDate} from 'utils/date-utils';
 class Thought {
 
   id;
-  content;
-  createdAt;
-  slug;
   title;
-  description;
+  slug;
+  content;
   coverImageUrl;
+  createdAt;
   tags = [];
 
   constructor(props) {
@@ -26,7 +25,6 @@ class Thought {
         .filter(tag => tag !== '')
       : null;
   }
-
 
 }
 
