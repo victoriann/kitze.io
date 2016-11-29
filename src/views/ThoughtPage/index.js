@@ -1,6 +1,13 @@
-import React from 'react';
-import {observer} from 'mobx-react';
+import React, {Component} from 'react';
+import {observer, inject} from 'mobx-react';
 import colors from 'config/colors';
+
+//models
+import Thought from 'stores/models/Thought';
+
+//data
+import {graphql} from 'react-apollo';
+import {ThoughtQuery, options} from './data';
 
 //meta
 import Helmet from 'react-helmet';
@@ -10,43 +17,59 @@ import {getMeta} from 'utils/head-utils';
 import {RightSide, Content, Title, Top} from './styles';
 import Spinner from 'components/Spinner';
 
-const ThoughtPage = ({store}) => {
+//markdown-to-react configuration
+import MTRC from 'markdown-to-react-components';
+import {renderCustomComponents} from 'react-in-markdown';
+import customComponents from 'config/custom-components';
+MTRC.configure({a: props => renderCustomComponents(props, customComponents)});
 
-  const {thoughts} = store;
-  const {loading, currentThought} = thoughts;
+@inject('store')
+@graphql(ThoughtQuery, {options})
+@observer
+class ThoughtPage extends Component {
+  render() {
+    const {data} = this.props;
+    const {loading} = data;
+    let thought;
 
-  return (
-    <RightSide className="rst" backgroundColor={colors.thoughtsBackgroundColor}>
+    if (data.allThoughts) {
+      thought = new Thought(data.allThoughts[0]);
+    }
 
-      <Helmet
-        title={currentThought.title}
-        meta={getMeta({
-          title: currentThought.title,
-          description: currentThought.description,
-          image: currentThought.coverImage
-        })
+    return (
+      <RightSide backgroundColor={colors.thoughtsBackgroundColor}>
+
+        {loading && <Spinner
+          className="spinner"
+          speed="0.8"
+          size="4em"
+          backgroundColor={colors.accent}
+          color={colors.thoughtsBackgroundColor}
+        />
         }
-      />
 
-      {loading && <Spinner
-        className="spinner"
-        speed="0.8"
-        size="4em"
-        backgroundColor={colors.accent}
-        color={colors.thoughtsBackgroundColor}
-      />
-      }
+        {!loading && thought && <div>
+          <Helmet
+            title={thought.title}
+            meta={getMeta({
+              title: thought.title,
+              description: thought.description,
+              image: thought.coverImage
+            })
+            }
+          />
+          <Top>
+            <Title>{thought.title}</Title>
+            <Content>
+              {MTRC(thought.content).tree}
+            </Content>
+          </Top>
+        </div>
+        }
 
-      {!loading && <div>
-        <Top>
-          <Title>{currentThought.title}</Title>
-          <Content dangerouslySetInnerHTML={{__html: currentThought.content}}/>
-        </Top>
-      </div>
-      }
-
-    </RightSide>
-  )
+      </RightSide>
+    )
+  }
 }
 
-export default observer(['store'])(ThoughtPage);
+export default ThoughtPage;

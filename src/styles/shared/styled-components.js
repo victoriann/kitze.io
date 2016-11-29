@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import {media} from 'utils/responsive-utils';
 import {injectGlobal} from 'styled-components';
 import {wrapperPadding} from 'styles/shared/properties';
-import flex from 'styles/flex';
 
 export const UnderlinedLink = styled.a`
     color: white;

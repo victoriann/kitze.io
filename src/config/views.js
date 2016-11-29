@@ -1,5 +1,6 @@
 import React from 'react';
 import {Route} from 'mobx-router';
+import {scrollBodyToTop} from 'utils/dom-utils';
 
 //components
 import Home from 'views/Home';
@@ -10,22 +11,25 @@ const paths = {
   home: new Route({
     id: 'home',
     component: <Home/>,
-    path: '/'
+    path: '/',
+    onEnter: () => {
+      scrollBodyToTop();
+    }
   }),
   thoughts: new Route({
     id: 'thoughts',
     component: <ThoughtsPage/>,
     path: '/thoughts/:tag?',
-    onEnter: (view, params, store) => {
-      store.thoughts.fetchThoughts();
+    onEnter: () => {
+      scrollBodyToTop();
     }
   }),
   thought: new Route({
     id: 'thought',
     component: <ThoughtPage/>,
     path: '/thought/:slug',
-    onEnter: (view, params, store) => {
-      store.thoughts.getThought(params.slug)
+    onEnter: () => {
+      scrollBodyToTop();
     }
   })
 };
