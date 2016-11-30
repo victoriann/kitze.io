@@ -20,8 +20,21 @@ import Spinner from 'components/Spinner';
 //markdown-to-react configuration
 import MTRC from 'markdown-to-react-components';
 import {renderCustomComponents} from 'react-in-markdown';
+
+//custom markdown components
 import customComponents from 'config/custom-components';
-MTRC.configure({a: props => renderCustomComponents(props, customComponents)});
+//markdown styled-components
+import Code from 'components/markdown/Code';
+import Image from 'components/markdown/Image';
+import Codespan from 'components/markdown/Codespan';
+import Link from 'components/markdown/Link';
+
+MTRC.configure({
+  a: props => renderCustomComponents(props, customComponents, Link),
+  img: Image,
+  code: Code,
+  codespan: Codespan
+});
 
 @inject('store')
 @graphql(ThoughtQuery, {options})
