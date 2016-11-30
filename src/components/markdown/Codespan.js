@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 const Codespan = styled.code`
@@ -7,8 +6,4 @@ const Codespan = styled.code`
     font-size: 14px;
 `;
 
-const CodeComponent = ({children}) => {
-  return <Codespan>{children}</Codespan>;
-}
-
-export default CodeComponent;
+export default Codespan;

@@ -9,8 +9,8 @@ const Link = styled.a`
     padding-bottom: 2px;
 `;
 
-const CodeComponent = ({href, children}) => {
+const LinkComponent = ({href, children}) => {
   return <Link href={href}>{children}</Link>;
 }
 
-export default CodeComponent;
+export default LinkComponent;
