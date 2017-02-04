@@ -1,8 +1,8 @@
 import React from 'react';
 import {Wrapper} from './styles';
 
-const Event = ({event:{date, name, talk, finished}}) => (
-  <Wrapper finished={finished}>
+const Event = ({allFinished, event:{date, name, talk, finished}}) => (
+  <Wrapper finished={finished && !allFinished}>
     <span> {date} - </span>
     <b> {name} </b>
     <span> - {talk} </span>

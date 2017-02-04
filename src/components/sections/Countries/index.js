@@ -5,7 +5,7 @@ const Countries = () => (
   <Section id="countries">
     <SectionTitle> Countries visited (10/196)</SectionTitle>
     <UnorderedList>
-      <ListItem> 🇲🇰 🇷🇸 🇧🇬 🇦🇹 🇭🇷 🇭🇺 🇨🇿 🇬🇷 🇳🇱 🇸🇰</ListItem>
+      <ListItem> 🇲🇰 🇷🇸 🇧🇬 🇦🇹 🇭🇷 🇭🇺 🇨🇿 🇬🇷 🇳🇱 🇸🇰 🇨🇭</ListItem>
     </UnorderedList>
   </Section>
 );
