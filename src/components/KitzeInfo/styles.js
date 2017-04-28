@@ -30,7 +30,7 @@ export const Image = styled.img`
     width: 150px;
     height: 150px;
     object-fit: cover;
-    object-position: 0px -10px;
+    object-position: 0 0;
     margin-top: 0px;
     border-radius: 100%;
     ${props => props.styles}
