@@ -6,6 +6,7 @@ import {scrollBodyToTop} from 'utils/dom-utils';
 import Home from 'views/Home';
 import ThoughtsPage from 'views/ThoughtsPage';
 import ThoughtPage from 'views/ThoughtPage';
+import FlatBird from 'views/FlatBird';
 
 const paths = {
   home: new Route({
@@ -31,6 +32,11 @@ const paths = {
     onEnter: () => {
       scrollBodyToTop();
     }
+  }),
+  flatbird: new Route({
+    id: 'flatbird',
+    component: <FlatBird/>,
+    path: '/flatbird'
   })
 };
 

@@ -12,15 +12,15 @@ import KitzeInfo from 'components/KitzeInfo';
 const App = ({store}) => {
 
   const {router:{currentView}} = store;
-  const isHome = currentView.id === 'home';
+  const isWhite = currentView.id === 'home' || currentView.id === 'flatbird';
 
   return (
-    <Wrapper isHome={isHome}>
-      <Header styles={isHome ? childStyles.Header.home : childStyles.Header.other}/>
+    <Wrapper isHome={isWhite}>
+      <Header styles={isWhite ? childStyles.Header.home : childStyles.Header.other}/>
       <ContentMiddle id="router">
         <Sides>
-          <LeftSide id="left-side" isHome={isHome} className="animated fadeIn">
-            <KitzeInfo styles={isHome ? childStyles.KitzeInfo.home : childStyles.KitzeInfo.other} childStyles/>
+          <LeftSide id="left-side" isHome={isWhite} className="animated fadeIn">
+            <KitzeInfo styles={isWhite ? childStyles.KitzeInfo.home : childStyles.KitzeInfo.other} childStyles/>
           </LeftSide>
           {currentView && currentView.component}
         </Sides>
