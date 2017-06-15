@@ -30,8 +30,10 @@ export const Circle = styled.div`
   background-color: white;
   color: gray;
   font-size: 16px;
-  height: 100px;
+  min-height: 100px;
   width: 100px;
+  height: 100px;
+  min-width: 100px;
   font-weight: bold;
   text-align: center;
   margin-right: 20px;

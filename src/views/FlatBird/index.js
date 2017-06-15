@@ -39,7 +39,7 @@ class ThoughtsPage extends Component {
           </Circle>
 
           <Strong >
-            and strong font sizes
+            strong fonts, and YUGE fontsizes
           </Strong>
         </Horizontal>
 
