@@ -30,7 +30,7 @@ class ThoughtsPage extends Component {
         </Strong>
 
         <Text className="animated fadeIn">
-          Cannot stand Twitter's new round design? I know right!
+          Cannot stand Twitter's new round design? I know right! 🙄
         </Text>
 
         <Horizontal>
@@ -39,12 +39,12 @@ class ThoughtsPage extends Component {
           </Circle>
 
           <Strong >
-            strong fonts, and YUGE fontsizes
+            strong fonts, and YUGE fontsizes 🙅
           </Strong>
         </Horizontal>
 
         <HowAbout>
-          How about a Chrome extension that will normalize most of the changes?
+          Allow FlatBird to normalize most of the changes for you 🙌
         </HowAbout>
 
         <Horizontal>
@@ -53,11 +53,11 @@ class ThoughtsPage extends Component {
           </Download>
 
           <Download target="_blank" href="https://userstyles.org/styles/144004/flatbird">
-            Stylish userstyle
+            Stylish script
           </Download>
 
           <Download target="_blank" href="https://gist.github.com/kitze/ae66f498db8714787e37ce1cd7dc1da7">
-            Raw CSS
+            CSS gist
           </Download>
 
         </Horizontal>
