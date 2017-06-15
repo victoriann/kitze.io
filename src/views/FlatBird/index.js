@@ -49,12 +49,17 @@ class ThoughtsPage extends Component {
 
         <Horizontal>
           <Download target="_blank" href="https://chrome.google.com/webstore/detail/flatbird/faioifdgpccbhekmggeenehaogakjgjd">
-            Install FlatBird
+             Chrome extension
+          </Download>
+
+          <Download target="_blank" href="https://userstyles.org/styles/144004/flatbird">
+            Stylish userstyle
           </Download>
 
           <Download target="_blank" href="https://gist.github.com/kitze/ae66f498db8714787e37ce1cd7dc1da7">
-            Copy CSS styles
+            Raw CSS
           </Download>
+
         </Horizontal>
 
 

@@ -71,7 +71,7 @@ export const Download = styled.a`
   background-color: rgba(255, 255, 255, 0.71);
   border-radius: 4px;
   cursor: pointer;
-  width: 241px;
+  width: 200px;
   height: 100px;
   text-align: center;
   ${flex.horizontal}
@@ -82,7 +82,7 @@ export const Download = styled.a`
   color: #333959;
   font-weight: 600;
   text-decoration: none;
-  margin-right: 15px;
+  margin-right: 20px;
   
   &:hover {
     background-color: rgba(255, 255, 255, 0.9);
