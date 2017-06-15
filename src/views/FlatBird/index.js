@@ -47,9 +47,16 @@ class ThoughtsPage extends Component {
           How about a Chrome extension that will normalize most of the changes?
         </HowAbout>
 
-        <Download target="_blank" href="https://chrome.google.com/webstore/detail/flatbird/faioifdgpccbhekmggeenehaogakjgjd">
-          Download FlatBird
-        </Download>
+        <Horizontal>
+          <Download target="_blank" href="https://chrome.google.com/webstore/detail/flatbird/faioifdgpccbhekmggeenehaogakjgjd">
+            Install FlatBird
+          </Download>
+
+          <Download target="_blank" href="https://gist.github.com/kitze/ae66f498db8714787e37ce1cd7dc1da7">
+            Copy CSS styles
+          </Download>
+        </Horizontal>
+
 
       </RightSide>
     )

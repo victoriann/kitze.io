@@ -34,7 +34,7 @@ export const Circle = styled.div`
   width: 100px;
   height: 100px;
   min-width: 100px;
-  font-weight: bold;
+  font-weight: 600;
   text-align: center;
   margin-right: 20px;
   ${flex.horizontal}
@@ -42,7 +42,7 @@ export const Circle = styled.div`
 `;
 
 export const Strong = styled.div`
-  font-weight: bold;
+  font-weight: 600;
   font-size: 40px;
   color: white;
   
@@ -80,8 +80,9 @@ export const Download = styled.a`
   font-size: 20px;
   border: 4px solid white;
   color: #333959;
-  font-weight: bold;
+  font-weight: 600;
   text-decoration: none;
+  margin-right: 15px;
   
   &:hover {
     background-color: rgba(255, 255, 255, 0.9);
