@@ -10,7 +10,6 @@ import {Provider} from 'mobx-react';
 //router
 import {startRouter} from 'mobx-router';
 import views from 'config/views';
-startRouter(views, store);
 
 //components
 import App from 'views/App';
@@ -18,6 +17,9 @@ import App from 'views/App';
 //apollo
 import ApolloClient, {createNetworkInterface} from 'apollo-client'
 import {ApolloProvider} from 'react-apollo';
+
+startRouter(views, store);
+
 const networkInterface = createNetworkInterface({uri: CONSTANTS.GRAPHQL_URL});
 networkInterface.use([{
   applyMiddleware (req, next) {
