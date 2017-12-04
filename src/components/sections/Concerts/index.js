@@ -3,7 +3,7 @@ import {Section, SectionTitle, ListItem, UnorderedList} from 'styles/shared/styl
 
 const Concerts = () => (
   <Section id="concerts">
-    <SectionTitle> Concerts (19) </SectionTitle>
+    <SectionTitle> Concerts (35) </SectionTitle>
     <UnorderedList>
       <ListItem> EUROPE - 🇳🇱</ListItem>
       <ListItem> Alter Bridge - 🇳🇱</ListItem>
@@ -24,6 +24,23 @@ const Concerts = () => (
       <ListItem> Queen + Adam Lambert - 🇧🇬</ListItem>
       <ListItem> AC/DC + Axl Rose - 🇦🇹</ListItem>
       <ListItem> Aerosmith - 🇧🇬</ListItem>
+      <ListItem> Rolling Stones - 🇩🇪</ListItem>
+      <ListItem> Linkin Park - 🇳🇱</ListItem>
+      <ListItem> John Mayer - 🇳🇱</ListItem>
+      <ListItem> Bryan Adams - 🇳🇱</ListItem>
+      <ListItem> Hans Zimmer - 🇳🇱</ListItem>
+      <ListItem> Paul Gilbert - 🇳🇱</ListItem>
+      <ListItem> Evanescence - 🇳🇱</ListItem>
+      <ListItem> Deep Purple - 🇳🇱</ListItem>
+      <ListItem> The Piano Guys - 🇳🇱</ListItem>
+      <ListItem> Apocalyptica - 🇳🇱</ListItem>
+      <ListItem> KISS - 🇳🇱</ListItem>
+      <ListItem> The Killers - 🇬🇧</ListItem>
+      <ListItem> Guns N' Roses - 🇳🇱</ListItem>
+      <ListItem> Inglorious - 🇩🇪 </ListItem>
+      <ListItem> Eric Clapton - 🇬🇧 </ListItem>
+      <ListItem> Santana - 🇬🇧 </ListItem>
+      <ListItem> Gary Clark Jr. - 🇬🇧 </ListItem>
     </UnorderedList>
   </Section>
 );

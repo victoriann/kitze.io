@@ -26,7 +26,7 @@ const projects = [
   },
   {
     name: 'SwipeGuide',
-    link: 'http://www.swipeguide.co/',
+    link: 'http://swipeguide.com',
     workedOn: 'code for internal tool + mobile'
   },
   {

@@ -11,7 +11,7 @@ const Speaking = () => (
     <SectionTitle> Speaking </SectionTitle>
     <UnorderedList>
 
-      {events.map((event, key)=> <Event allFinished={allFinished} key={key} event={event}/>)}
+      {events.reverse().map((event, key)=> <Event allFinished={allFinished} key={key} event={event}/>)}
 
       <ListItem>
         <span> Need me at your Event, Meetup, or Conference? </span> <br/>

@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "custom-react-scripts": "^0.1.4"
+    "custom-react-scripts": "^0.1.4",
+    "prettier": "^1.8.2"
   },
   "dependencies": {
     "animate.css": "3.5.2",

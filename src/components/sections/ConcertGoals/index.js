@@ -3,12 +3,10 @@ import {Section, SectionTitle, ListItem, UnorderedList} from 'styles/shared/styl
 
 const ConcertGoals = () => (
   <Section id="concert-goals">
-    <SectionTitle> Concert goals (23) </SectionTitle>
+    <SectionTitle> Concert goals (19) </SectionTitle>
     <UnorderedList>
       <ListItem>
-        Rolling Stones,
         Foo Fighters,
-        Linkin Park,
         Joe Bonamassa,
         Santana,
         Bon Jovi,
@@ -22,12 +20,10 @@ const ConcertGoals = () => (
         Kings Of Leon,
         Richie Kotzen,
         Tenacious D,
-        Guns N' Roses,
         Sebastian Bach,
         System of A Down,
         Rammstein,
         U2,
-        Inglorious,
         Imagine Dragons
       </ListItem>
     </UnorderedList>

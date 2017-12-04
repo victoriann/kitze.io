@@ -5,13 +5,14 @@ const DevStack = () => (
   <Section id="dev-stack">
     <SectionTitle> Current dev stack </SectionTitle>
     <UnorderedList>
-      <ListItem> JavaScript (ES6)</ListItem>
+      <ListItem> JavaScript (ES2015)</ListItem>
       <ListItem> React</ListItem>
       <ListItem> MobX</ListItem>
-      <ListItem> styled-components</ListItem>
+      <ListItem> glamorous</ListItem>
       <ListItem> create-react-app</ListItem>
       <ListItem> Node</ListItem>
       <ListItem> Apollo</ListItem>
+      <ListItem> graphql-tools</ListItem>
       <ListItem> GraphQL</ListItem>
     </UnorderedList>
   </Section>

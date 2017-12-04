@@ -59,7 +59,7 @@ class Home extends Component {
         <DevStack/>
         <Technologies/>
         <Libraries/>
-        <Projects/>
+        {/*<Projects/>*/}
         <Achievements/>
 
         {!showExtra && <ShowMoreButton onClick={() => app.setShowExtra(true)}>

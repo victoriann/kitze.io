@@ -4,7 +4,6 @@ const links = {
   androidYoutube: 'https://youtube.com/techmuggles',
   soundcloud: 'https://soundcloud.com/thekitze',
   twitter: 'https://twitter.com/thekitze',
-  linkedin: 'https://nl.linkedin.com/in/kitze',
   medium: 'https://medium.com/@kitze',
   email: 'mailto:kristijan.mkd@gmail.com'
 };
@@ -40,10 +39,6 @@ export const socialIcons = [
   {
     icon: 'github',
     href: links.github
-  },
-  {
-    icon: 'linkedin',
-    href: links.linkedin
   },
   {
     icon: 'medium',
