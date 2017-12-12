@@ -93,6 +93,18 @@ const events = [
     talk: talks.graphqlState,
     date: '25.01.18',
     finished: true
+  },
+  {
+    name: 'Workshop @ React Amsterdam 2018',
+    talk: talks.reactWorkshop,
+    date: '12.04.18',
+    finished: true
+  },
+  {
+    name: 'Talk @ React Amsterdam 2018',
+    talk: talks.graphqlState,
+    date: '13.04.18',
+    finished: true
   }
 ];
 
