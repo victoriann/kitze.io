@@ -1,7 +1,6 @@
 const links = {
   github: 'https://github.com/kitze',
   guitarYoutube: 'https://youtube.com/ampoverloaded',
-  androidYoutube: 'https://youtube.com/techmuggles',
   soundcloud: 'https://soundcloud.com/thekitze',
   twitter: 'https://twitter.com/thekitze',
   medium: 'https://medium.com/@kitze',
@@ -16,10 +15,6 @@ export const textLinks = [
   {
     href: links.guitarYoutube,
     title: 'Guitar Player'
-  },
-  {
-    href: links.androidYoutube,
-    title: 'YouTuber'
   },
   {
     href: links.soundcloud,
