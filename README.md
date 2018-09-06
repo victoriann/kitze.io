@@ -1,4 +1,4 @@
-# kitze.io
+# .io
 
 🛠 Just my overengineered personal website.
 Generated with [create-react-app](https://github.com/facebookincubator/create-react-app) and [custom-react-scripts](https://www.npmjs.com/package/custom-react-scripts).
